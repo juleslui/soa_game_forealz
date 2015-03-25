@@ -26,6 +26,26 @@ class CreaturesController < ApplicationController
     @oppocrea = Creature.find(params[:id])
   end
 
+  def usemove
+    @usermove = Move.find(params[:id])
+    @oppocrea = Creature.find(params[:id])
+    @newhp = @oppocrea.hp - @usermove.damage
+    @oppcrea.update_attribute(:hp, @newhp)
+    redirect_to '/fight'
+  end
+
+  def catch
+    @oppocrea = Creature.find(params[:id])
+    if @oppocrea.hp < 150
+      @oppcrea.update_attribute(:user_id, current_user.id)
+      redirect_to rename_path(@oppocrea)
+    else
+      redirect_to '/fight'
+    end
+
+  def rename
+
+
   # POST /creatures
   # POST /creatures.json
   def create
