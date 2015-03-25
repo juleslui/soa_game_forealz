@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+ 
+  root 'locations#index'
   resources :creatures
 
   resources :moves
