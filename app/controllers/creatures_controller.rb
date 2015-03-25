@@ -1,6 +1,6 @@
 class CreaturesController < ApplicationController
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /creatures
   # GET /creatures.json
   def index
@@ -19,6 +19,11 @@ class CreaturesController < ApplicationController
 
   # GET /creatures/1/edit
   def edit
+  end
+
+  def fight
+    @mycrea = current_user.creatures[0]
+    @oppocrea = Creature.find(params[:id])
   end
 
   # POST /creatures

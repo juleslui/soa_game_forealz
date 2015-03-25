@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :locations
 
   devise_for :users
+
+  get 'creature/:id/fight' => 'creatures#fight', :as => 'fight'
+  #get 'users/:id/disable' => 'users#disable', :as => 'disable_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

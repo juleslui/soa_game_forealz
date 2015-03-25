@@ -10,7 +10,8 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    @locations = Location.find(params[:id])
+    @location = Location.find(params[:id])
+    @monsters = @location.creatures
   end
 
   # GET /locations/new
@@ -70,6 +71,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params[:location]
+      params.require(:location).permit(:name, :x_coordinates, :y_coordinates)
     end
 end

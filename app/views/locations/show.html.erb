@@ -1,4 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
+<h1>@location.name</h1>
+<br />
+<h2>Monster Encountered!</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>HP</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monsters.each do |monster| %>
+      <tr>
+        <td><%= monster.name %></td>
+        <td><%= monster.hp %></td>
+        <td><%= link_to 'Fight', fight_path(monster) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Back', locations_path %>
