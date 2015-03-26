@@ -1,5 +1,18 @@
-
-
-<%= @creature.name %>
-<%= @curruser.id %>
-<%= @mycreature.name %>
+<h3><%= @creature.name %></h3>
+<%= @creature.hp %>
+<br />
+<br />
+<br />
+<h3><%= @mycrea.name %></h3>
+<%= @mycrea.hp %>
+<br />
+<br />
+<br />
+<% @mycrea.moves.each do |move| %>
+<tr>
+	<td><%= move.name %></td>
+	<td><%= move.max_number %></td>
+	<td><%= move.damage %></td>
+	<td><%= link_to 'Use', usemove_path(@creature) %></td>
+<tr>
+	<% end %>

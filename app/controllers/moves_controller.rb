@@ -18,6 +18,14 @@ class MovesController < ApplicationController
     @move = Move.new
   end
 
+  def usemove(creature)
+   @usermove = Move.find(params[:id])
+   @oppocrea = Creature.find(creature)
+   @newhp = @oppocrea.hp - @usermove.damage
+   @oppcrea.update_attribute(:hp, @newhp)
+   redirect_to '/fight'
+  end
+
   # GET /moves/1/edit
   def edit
   end

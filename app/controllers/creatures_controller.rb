@@ -5,7 +5,7 @@ class CreaturesController < ApplicationController
   # GET /creatures
   # GET /creatures.json
   def index
-    @creatures = Creature.all
+    @creatures = current_user.creatures
   end
 
   # GET /creatures/1
@@ -27,8 +27,8 @@ class CreaturesController < ApplicationController
 
   def fight
     @creature = Creature.find(params[:id])
-    @curruser = User.find(params[:id])
-    @mycreature = @creature.user_id(0)
+    @mycrea = current_user.creatures.find_by_id(6)
+
 #@org = @team.org
 #@group = @team.group
 
