@@ -18,7 +18,7 @@ class MovesController < ApplicationController
     @move = Move.new
   end
 
-  def usemove(creature)
+  def usemove
    @usermove = Move.find(params[:id])
    @oppocrea = Creature.find(creature)
    @newhp = @oppocrea.hp - @usermove.damage
@@ -51,13 +51,13 @@ class MovesController < ApplicationController
     #@oppocrea = Creature.find(params[:id])
   #end
 
-  def usemove
-    @usermove = Move.find(params[:id])
-    @oppocrea = Creature.find(params[:id])
-    @newhp = @oppocrea.hp - @usermove.damage
-    @oppcrea.update_attribute(:hp, @newhp)
-    redirect_to '/fight'
-  end
+  #def usemove
+  #  @usermove = Move.find(params[:id])
+  #  @oppocrea = Creature.find(params[:id])
+  #  @newhp = @oppocrea.hp - @usermove.damage
+  #  @oppcrea.update_attribute(:hp, @newhp)
+  #  redirect_to '/fight'
+  #end
 
   # PATCH/PUT /moves/1
   # PATCH/PUT /moves/1.json

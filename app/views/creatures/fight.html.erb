@@ -13,6 +13,11 @@
 	<td><%= move.name %></td>
 	<td><%= move.max_number %></td>
 	<td><%= move.damage %></td>
-	<td><%= link_to 'Use', usemove_path(@creature) %></td>
+
+	<% @creature.hp = @creature.hp - move.damage %>
+<%= @creature.hp %>
+
+	<td><%= link_to 'Use', '#', :onclick => '' %></td>
 <tr>
 	<% end %>
+
