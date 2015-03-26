@@ -26,8 +26,12 @@ class CreaturesController < ApplicationController
 
 
   def fight
-          @creature = Creature.find[params(:id)]
-          
+    @creature = Creature.find(params[:id])
+    @curruser = User.find(params[:id])
+    @mycreature = @creature.user_id(0)
+#@org = @team.org
+#@group = @team.group
+
   end
 
   #def usemove
