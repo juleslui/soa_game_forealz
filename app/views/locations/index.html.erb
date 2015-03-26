@@ -1,6 +1,12 @@
+
+<center>
 <body id="location">
-<body background="assets/main.jpg">
-<p id="notice"><%= notice %></p>
+<!--<body background="assets/smallback.jpg" width="100%" height="100%">-->
+
+
+
+<p> Previous Action: </p><p id="notice"><%= notice %></p>
+
 
 <font face="Janda Elegant Handwriting" size="20">Listing Locations</font>
 
@@ -26,7 +32,15 @@
 </table>
 
 <br>
-
 <%= link_to 'New Location', new_location_path %>
+<br>
+</div>
+
+<body id="locationright">
+<img src="/assets/eve.png" alt="logo">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p align=right>
 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
 
+</p></center>
+</body>

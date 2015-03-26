@@ -8,16 +8,38 @@ body {
   
 }
 
+
+
+
 #login {
     background-color: #FFFFCC;
     font-family: Iowan Old Style;
     font-size: 15px;
 }
 
-#location{ 
-	background-image: url("main.jpg");
+#location { 
+	padding-left: 0px;
+	background-color: #FFA971;
 	font-family: Iowan Old Style;
-    font-size: 15px}
+    font-size: 15px;
+
+}
+
+#locationright {
+	padding-right: 50px;
+	background-color: #FFA971;
+	font-family: Iowan Old Style;
+    font-size: 15px;
+}
+
+#createlocation {
+	padding-top: 50px; 
+	padding-left: 0px;
+	background-color: #E68585;
+	font-family: Iowan Old Style;
+    font-size: 15px;
+
+}
 
 
 #content-1 { 
