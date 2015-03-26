@@ -1,18 +1,32 @@
-<h3><%= @creature.name %></h3>
-<%= @creature.hp %>
-<br />
-<br />
-<br />
-<h3><%= @mycrea.name %></h3>
-<%= @mycrea.hp %>
-<br />
-<br />
-<br />
+
+<form action="/form" method="post">
+
+ <textarea id="result" rows="6" cols="40" value=>
+You: <%= @mycrea.name %>
+HP: <%= @mycrea.hp %>
+
+Opponent: <%= @creature.name %>
+HP: <%= @creature.hp %>
+  </textarea><br>
+
+Available Moves: <br>
 <% @mycrea.moves.each do |move| %>
-<tr>
-	<td><%= move.name %></td>
-	<td><%= move.max_number %></td>
-	<td><%= move.damage %></td>
-	<td><%= link_to 'Use', usemove_path(@creature) %></td>
-<tr>
-	<% end %>
+<%=move.name %> <br>
+<%end%>
+  <input type = "text" name="<%=:move%>" size="10"placeholder="Move">
+  <input type = "submit">
+</form>
+
+<% @mycrea.moves.each do |move| %>
+
+<%=@mycrea.name%> used <%=move.name %>
+Damage: <%= move.damage %>
+<% @creature.hp = @creature.hp - move.damage %>
+<%= @creature.hp %>
+	
+<% end %>
+
+
+
+	
+

@@ -42,6 +42,18 @@ class CreaturesController < ApplicationController
    # redirect_to '/fight'
   #end
 
+  #def minushp
+   # @creature.hp = @creature.hp - move.damage
+  #end
+
+  def usemove
+    @usermove = Move.find(params[:id])
+    @oppocrea = Creature.find(params[:id])
+    @newhp = @oppocrea.hp - @usermove.damage
+    @oppcrea.update_attribute(:hp, @newhp)
+    redirect_to '/fight'
+  end
+
   def catch
     @oppocrea = Creature.find(params[:id])
     if @oppocrea.hp < 150
@@ -94,6 +106,9 @@ class CreaturesController < ApplicationController
       format.html { redirect_to creatures_url, notice: 'Creature was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def form
   end
 
   #private

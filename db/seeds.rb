@@ -38,7 +38,8 @@ Move.create!([
   {id: 18, name: "Spite", max_number: 20, kind: "Ghost", damage: 80, creature_id: 5},
   {id: 19, name: "Hypnosis", max_number: 20, kind: "Psychic", damage: 80, creature_id: 5},
   {id: 20, name: "Mean Look", max_number: 25, kind: "Normal", damage: 80, creature_id: 5},
-  {id: 21, name: "Great Big Hug", max_number: 30, kind: "Normal", damage: 100, creature_id: 6}
+  {id: 21, name: "Great Big Hug", max_number: 30, kind: "Normal", damage: 100, creature_id: 6},
+  {id: 22, name: "Kiss From Me To You", max_number: 10, kind: "Ghost", damage: 150, creature_id: 6}
 ])
 
 Location.create!([

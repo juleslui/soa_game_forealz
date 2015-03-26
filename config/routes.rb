@@ -12,7 +12,19 @@ Rails.application.routes.draw do
   get 'creature/:id/fight' => 'creatures#fight', :as => 'fight'
   get 'creature/:id/catch' => 'creatures#catch', :as => 'catch'
   get 'creature/:id/rename' => 'creatures#rename', :as => 'rename'
-  get 'usemove' => 'move#usemove', :as => 'usemove'
+  
+
+
+post '/form' do
+    @url = "https://localhost:8080/#{params[:room]}"
+    @comm = params['comm']
+  uri = URI.parse(@url)
+if params[:command]!= ""
+  data = {"command" => "#{params[:command]}", "state" => $state}
+else
+  data = {"command" => nil, "state" => $state}
+end
+
   #get 'users/:id/disable' => 'users#disable', :as => 'disable_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
