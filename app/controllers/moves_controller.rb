@@ -1,5 +1,6 @@
 class MovesController < ApplicationController
   before_action :set_move, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /moves
   # GET /moves.json
@@ -37,6 +38,19 @@ class MovesController < ApplicationController
     end
   end
 
+  #def fight
+    #@mycrea = current_user.creatures[0]
+    #@oppocrea = Creature.find(params[:id])
+  #end
+
+  def usemove
+    @usermove = Move.find(params[:id])
+    @oppocrea = Creature.find(params[:id])
+    @newhp = @oppocrea.hp - @usermove.damage
+    @oppcrea.update_attribute(:hp, @newhp)
+    redirect_to '/fight'
+  end
+
   # PATCH/PUT /moves/1
   # PATCH/PUT /moves/1.json
   def update
@@ -71,4 +85,5 @@ class MovesController < ApplicationController
     def move_params
       params[:move]
     end
+
 end

@@ -13,7 +13,8 @@ Creature.create!([
   {id: 2, name: "Squirtle", nickname: "", kind: "Water", hp: 500, description: "Blue", user_id: nil, location_id: 2},
   {id: 3, name: "Charmander", nickname: "", kind: "Fire", hp: 500, description: "Red", user_id: nil, location_id: 3},
   {id: 4, name: "Bulbasaur", nickname: "", kind: "Grass", hp: 500, description: "Green", user_id: nil, location_id: 4},
-  {id: 5, name: "Ghastly", nickname: "", kind: "Ghost", hp: 500, description: "Void of Endless Anguish Black", user_id: nil, location_id: 5}
+  {id: 5, name: "Ghastly", nickname: "", kind: "Ghost", hp: 500, description: "Void of Endless Anguish Black", user_id: nil, location_id: 5},
+  {id: 6, name: "Barney", nickname: "", kind: "Ghost", hp:500, description: "Purple", user_id: 1, location_id: nil}
 ])
 
 Move.create!([
@@ -36,7 +37,8 @@ Move.create!([
   {id: 17, name: "Lick", max_number: 30, kind: "Ghost", damage: 80, creature_id: 5},
   {id: 18, name: "Spite", max_number: 20, kind: "Ghost", damage: 80, creature_id: 5},
   {id: 19, name: "Hypnosis", max_number: 20, kind: "Psychic", damage: 80, creature_id: 5},
-  {id: 20, name: "Mean Look", max_number: 25, kind: "Normal", damage: 80, creature_id: 5}
+  {id: 20, name: "Mean Look", max_number: 25, kind: "Normal", damage: 80, creature_id: 5},
+  {id: 21, name: "Great Big Hug", max_number: 30, kind: "Normal", damage: 100, creature_id: 6}
 ])
 
 Location.create!([

@@ -1,6 +1,7 @@
 class CreaturesController < ApplicationController
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  include CreaturesHelper
   # GET /creatures
   # GET /creatures.json
   def index
@@ -10,6 +11,7 @@ class CreaturesController < ApplicationController
   # GET /creatures/1
   # GET /creatures/1.json
   def show
+    @creature = Creature.find(params[:id])
   end
 
   # GET /creatures/new
@@ -21,18 +23,20 @@ class CreaturesController < ApplicationController
   def edit
   end
 
+
+
   def fight
-    @mycrea = current_user.creatures[0]
-    @oppocrea = Creature.find(params[:id])
+          @creature = Creature.find[params(:id)]
+          
   end
 
-  def usemove
-    @usermove = Move.find(params[:id])
-    @oppocrea = Creature.find(params[:id])
-    @newhp = @oppocrea.hp - @usermove.damage
-    @oppcrea.update_attribute(:hp, @newhp)
-    redirect_to '/fight'
-  end
+  #def usemove
+   # @usermove = Move.find(params[:id])
+   # @oppocrea = Creature.find(params[:id])
+   # @newhp = @oppocrea.hp - @usermove.damage
+   # @oppcrea.update_attribute(:hp, @newhp)
+   # redirect_to '/fight'
+  #end
 
   def catch
     @oppocrea = Creature.find(params[:id])
@@ -42,8 +46,10 @@ class CreaturesController < ApplicationController
     else
       redirect_to '/fight'
     end
+  end
 
   def rename
+  end
 
 
   # POST /creatures
@@ -86,10 +92,11 @@ class CreaturesController < ApplicationController
     end
   end
 
-  private
+  #private
     # Use callbacks to share common setup or constraints between actions.
     def set_creature
       @creature = Creature.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

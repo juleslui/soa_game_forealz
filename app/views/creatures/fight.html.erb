@@ -1,14 +1,3 @@
-<%= @mycrea.name %>
-<%= @mycrea.hp %>
 
-<% @mycrea.moves.each do |move| %>
-<td><%= move.name %></td>
-<td><%= move.kind %></td>
-<td><%= move.max_number %></td>
-<td><%= link_to 'Use', usemove(move) %></td>
-<% end %>
-<%= link_to 'Catch', catch_path(@oppocrea) %>
-<%= link_to 'Flee', locations_path %>
 
-<%= @oppocrea.name %>
-<%= @oppocrea.hp %>
+<%= creature.fight %>
